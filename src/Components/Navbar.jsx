@@ -4,6 +4,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { IoMdGlobe } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -63,17 +64,18 @@ const Navbar = () => {
                         <button className="hidden md:inline-flex items-center text-gray-600 space-x-2 hover:text-black">
                             <IoMdGlobe className="text-xl" />
                         </button>
-                        <button className="flex items-center space-x-2 border rounded-full px-3 py-2 hover:shadow-lg transition-shadow">
-                            <GiHamburgerMenu className="text-xl text-gray-500" />
+                        <button onClick={toggleMenu} className="flex items-center space-x-2 border rounded-full px-3 py-2 hover:shadow-lg transition-shadow">
+                            <div  className='sm:block hidden'><GiHamburgerMenu className="text-xl text-gray-500" /></div>
+                            <div className="sm:hidden">
+                            <button onClick={toggleMenu}>
+                                {isOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+                            </button>
+                        </div>
                             <FaUserCircle className="text-3xl text-gray-500" />
                         </button>
 
                         {/* Mobile Menu Toggle Button */}
-                        <div className="sm:hidden">
-                            <button onClick={toggleMenu}>
-                                {isOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
-                            </button>
-                        </div>
+                        
                     </div>
                 </div>
 
@@ -104,6 +106,7 @@ const Navbar = () => {
                     </div>
                 )}
             </div>
+            <SearchBar />
         </header>
     );
 };
