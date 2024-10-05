@@ -38,7 +38,7 @@ const SearchBar = () => {
 
     return (
         <animated.div style={style} className='w-screen flex'>
-            <div className="flex items-center bg-white border-[2px] border-gray-200 rounded-[45px] shadow-lg mx-auto">
+            <div className="xl:scale-[1] lg:scale-[0.9] hidden lg:flex items-center bg-white border-[2px] border-gray-200 rounded-[45px] shadow-lg mx-auto">
                 <div className="flex pl-[35px] hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
                     <label className="text-[12px] font-[700] text-gray-600 mb-1">Where</label>
                     <input

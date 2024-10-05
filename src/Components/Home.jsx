@@ -1,11 +1,15 @@
-import React from 'react'
+import { useState } from 'react';
+import HorizontalScrollList from './HorizontalScrollList'; 
+import ListingsGrid from './Cards/ListingsGrid ';
 
 const Home = () => {
-  return (
-    <div className='h-[500vh] bg-black'>
-      asdad
-    </div>
-  )
+    const [category, setCategory] = useState('');
+    return (
+        <div className='mt-[150px]'>
+            <HorizontalScrollList setCategory={setCategory} />
+            <ListingsGrid category={category} />
+        </div>
+    )
 }
 
 export default Home

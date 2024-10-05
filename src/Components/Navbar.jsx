@@ -31,7 +31,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <header className="bg-white shadow-md fixed w-full top-0 z-50">
+        <header className="bg-white fixed w-full top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
                 <div className="flex justify-between items-center py-4">
                     <div className="flex-shrink-0">
@@ -64,16 +64,16 @@ const Navbar = () => {
                         <button className="hidden md:inline-flex items-center text-gray-600 space-x-2 hover:text-black">
                             <IoMdGlobe className="text-xl" />
                         </button>
-                        <button onClick={toggleMenu} className="flex items-center space-x-2 border rounded-full px-3 py-2 hover:shadow-lg transition-shadow">
-                            <div  className='sm:block hidden'><GiHamburgerMenu className="text-xl text-gray-500" /></div>
+                        <div onClick={toggleMenu} className="flex items-center space-x-2 border rounded-full px-3 py-2 hover:shadow-lg transition-shadow">
+                            <div className='sm:block hidden'><GiHamburgerMenu className="text-xl text-gray-500" /></div>
                             <div className="sm:hidden">
-                            <button onClick={toggleMenu}>
-                                {isOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
-                            </button>
-                        </div>
+                                <button onClick={toggleMenu}>
+                                    {isOpen ? <FaTimes className="text-xl" /> : <FaBars className="text-xl" />}
+                                </button>
+                            </div>
                             <FaUserCircle className="text-3xl text-gray-500" />
-                        </button> 
-                        
+                        </div>
+
                     </div>
                 </div>
 
