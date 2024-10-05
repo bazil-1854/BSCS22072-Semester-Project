@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { useSpring, animated } from 'react-spring';
 
 const SearchBar = () => {
     const [location, setLocation] = useState('');
@@ -7,7 +8,15 @@ const SearchBar = () => {
     const [checkOut, setCheckOut] = useState('');
     const [guests, setGuests] = useState(1);
 
-    const handleSearch = () => { 
+    const [scrollY, setScrollY] = useState(0);
+
+    // Animation for the search bar based on scroll position
+    const style = useSpring({
+        transform: `translateY(${-(Math.min(scrollY / 2, 100))}px) scale(${Math.max(1 - scrollY / 200, 0)})`,
+        opacity: Math.max(1 - scrollY / 200, 0),
+    });
+
+    const handleSearch = () => {
         console.log({
             location,
             checkIn,
@@ -16,63 +25,74 @@ const SearchBar = () => {
         });
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrollY(window.scrollY); // Update scrollY state
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-       <div className='w-screen flex'>
-         <div className="flex items-center space-x-6 bg-white border-[2px] border-gray-200 rounded-[28px] shadow-lg py-[15px] px-6 mx-auto"> 
-            <div className="flex flex-col">
-                <label className="text-sm font-medium text-gray-600 mb-1">Location</label>
-                <input
-                    type="text"
-                    placeholder="Where are you going?"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    className="outline-none px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-500"
-                />
-            </div>
- 
-            <div className="flex flex-col">
-                <label className="text-sm font-medium text-gray-600 mb-1">Check-In</label>
-                <input
-                    type="date"
-                    value={checkIn}
-                    onChange={(e) => setCheckIn(e.target.value)}
-                    className="outline-none px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-500"
-                />
-            </div>
- 
-            <div className="flex flex-col">
-                <label className="text-sm font-medium text-gray-600 mb-1">Check-Out</label>
-                <input
-                    type="date"
-                    value={checkOut}
-                    onChange={(e) => setCheckOut(e.target.value)}
-                    className="outline-none px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-500"
-                />
-            </div>
- 
-            <div className="flex flex-col">
-                <label className="text-sm font-medium text-gray-600 mb-1">Guests</label>
-                <select
-                    value={guests}
-                    onChange={(e) => setGuests(e.target.value)}
-                    className="outline-none px-4 py-2 border rounded-md focus:ring-2 focus:ring-red-500"
+        <animated.div style={style} className='w-screen flex'>
+            <div className="flex items-center bg-white border-[2px] border-gray-200 rounded-[45px] shadow-lg mx-auto">
+                <div className="flex pl-[35px] hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
+                    <label className="text-[12px] font-[700] text-gray-600 mb-1">Where</label>
+                    <input
+                        type="text"
+                        placeholder="Where are you going?"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
+                        className="outline-none focus:pl-[8px] rounded-md focus:ring-2 focus:ring-red-500"
+                    />
+                </div>
+
+                <div className="flex hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
+                    <label className="text-sm font-medium text-gray-600 mb-1">Check-In</label>
+                    <input
+                        type="date"
+                        value={checkIn}
+                        onChange={(e) => setCheckIn(e.target.value)}
+                        className="outline-none px-4 border rounded-md focus:ring-2 focus:ring-red-500"
+                    />
+                </div>
+
+                <div className="flex hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px]  flex-col">
+                    <label className="text-[12px] font-[700] text-gray-600 mb-1">Check-Out</label>
+                    <input
+                        type="date"
+                        value={checkOut}
+                        onChange={(e) => setCheckOut(e.target.value)}
+                        className="outline-none px-4 border rounded-md focus:ring-2 focus:ring-red-500"
+                    />
+                </div>
+
+                <div className="flex hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
+                    <label className="text-sm font-medium text-gray-600 mb-1">Guests</label>
+                    <select
+                        value={guests}
+                        onChange={(e) => setGuests(e.target.value)}
+                        className="outline-none px-4 border rounded-md focus:ring-2 focus:ring-red-500"
+                    >
+                        {[1, 2, 3, 4, 5].map((num) => (
+                            <option key={num} value={num}>
+                                {num} guest{num > 1 ? 's' : ''}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
+                <button
+                    onClick={handleSearch}
+                    className=" bg-red-500 ml-[85px] mr-[35px] text-white text-[22px] p-[10px] rounded-full hover:bg-red-600 transition duration-200"
                 >
-                    {[1, 2, 3, 4, 5].map((num) => (
-                        <option key={num} value={num}>
-                            {num} guest{num > 1 ? 's' : ''}
-                        </option>
-                    ))}
-                </select>
+                    <AiOutlineSearch />
+                </button>
             </div>
- 
-            <button
-                onClick={handleSearch}
-                className="mt-4 bg-red-500 text-white text-[28px] p-[5px] rounded-full hover:bg-red-600 transition duration-200"
-            >
-                <AiOutlineSearch/> 
-            </button>
-        </div>
-       </div>
+        </animated.div>
     );
 };
 

@@ -32,23 +32,23 @@ const Navbar = () => {
 
     return (
         <header className="bg-white shadow-md fixed w-full top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
                 <div className="flex justify-between items-center py-4">
                     <div className="flex-shrink-0">
-                        <NavLink to="/" className="text-xl font-bold text-gray-800">
+                        <NavLink to="/" className="text-xl font-bold text-red-500">
                             Airbnb
                         </NavLink>
                     </div>
 
                     {showSearchBar ? (
-                        <div className="hidden sm:flex items-cente border-[2px] rounded-full py-2 px-4 shadow-md">
+                        <div className="hidden sm:flex items-cente border-[2px] xl:mr-[-165px] z-90 rounded-full py-2 px-4 shadow-md">
                             <p className="bg-transparent flex-grow outline-none border-r-[2px] border-gray-200 px-[8px] font-[600] text-gray-700">Anywhere</p>
                             <p className="bg-transparent flex-grow outline-none border-r-[2px] border-gray-200 px-[8px] font-[600] text-[15px] text-gray-700">Any week</p>
                             <p className="bg-transparent flex-grow outline-none px-[8px] font-[600] text-[15px] text-gray-500">Any Guests</p>
                             <AiOutlineSearch className="bg-red-500 text-white rounded-full p-[5.5px] ml-[6px] text-[28px]" />
                         </div>
                     ) : (
-                        <div className="hidden sm:flex space-x-6">
+                        <div className="hidden sm:flex xl:mr-[-165px] bg-white z-90 space-x-6">
                             <NavLink to="/stays" className="text-gray-600 hover:text-black font-medium">
                                 Stays
                             </NavLink>
@@ -72,9 +72,7 @@ const Navbar = () => {
                             </button>
                         </div>
                             <FaUserCircle className="text-3xl text-gray-500" />
-                        </button>
-
-                        {/* Mobile Menu Toggle Button */}
+                        </button> 
                         
                     </div>
                 </div>
