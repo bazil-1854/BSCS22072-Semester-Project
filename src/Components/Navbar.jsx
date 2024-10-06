@@ -5,8 +5,9 @@ import { IoMdGlobe } from 'react-icons/io';
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import SearchBar from './SearchBar';
+import HorizontalScrollList from './HorizontalScrollList';
 
-const Navbar = () => {
+const Navbar = ({ setCategory }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [showSearchBar, setShowSearchBar] = useState(false);
 
@@ -14,8 +15,7 @@ const Navbar = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleScroll = () => {
-        // Show or hide the search bar based on scroll position
+    const handleScroll = () => { 
         if (window.scrollY > 50) {
             setShowSearchBar(true);
         } else {
@@ -76,8 +76,7 @@ const Navbar = () => {
 
                     </div>
                 </div>
-
-                {/* Mobile Menu */}
+ 
                 {isOpen && (
                     <div className="sm:hidden">
                         <div className="flex flex-col bg-white rounded-lg shadow-md mt-2 p-4">
@@ -105,6 +104,7 @@ const Navbar = () => {
                 )}
             </div>
             <SearchBar />
+            <HorizontalScrollList setCategory={setCategory} />
         </header>
     );
 };

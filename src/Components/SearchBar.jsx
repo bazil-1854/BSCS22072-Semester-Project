@@ -9,11 +9,11 @@ const SearchBar = () => {
     const [guests, setGuests] = useState(1);
 
     const [scrollY, setScrollY] = useState(0);
-
-    // Animation for the search bar based on scroll position
+ 
     const style = useSpring({
-        transform: `translateY(${-(Math.min(scrollY / 2, 100))}px) scale(${Math.max(1 - scrollY / 200, 0)})`,
-        opacity: Math.max(1 - scrollY / 200, 0),
+        transform: `translateY(${-(Math.min(scrollY / 2, 90))}px) scale(${Math.max(1 - scrollY / 50, 0)})`,
+        opacity: Math.max(1 - scrollY / 170, 0),
+        height: scrollY > 60 ? 0 : 'auto',
     });
 
     const handleSearch = () => {

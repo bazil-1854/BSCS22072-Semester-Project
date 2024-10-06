@@ -1,12 +1,8 @@
-import { useState } from 'react';
-import HorizontalScrollList from './HorizontalScrollList'; 
 import ListingsGrid from './Cards/ListingsGrid ';
 
-const Home = () => {
-    const [category, setCategory] = useState('');
+const Home = ({category}) => { 
     return (
-        <div className='mt-[150px]'>
-            <HorizontalScrollList setCategory={setCategory} />
+        <div className='mt-[280px]'> 
             <ListingsGrid category={category} />
         </div>
     )
