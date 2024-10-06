@@ -6,8 +6,8 @@ const ListingCard = ({ listing }) => {
     const hasHalfStar = listing.rating % 1 >= 0.5;
     
     return (
-        <div className="border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition duration-200">
-            <img src={listing.image} alt={listing.title} className="w-full h-40 object-cover" />
+        <div className="overflow-hidden  ">
+            <img src={listing.image} loading='lazy' alt={listing.title} className="m-2 h-[290px] w-[95%] border rounded-xl hover:shadow-xl transition duration-200" />
             <div className="p-4">
                 <h2 className="font-semibold text-lg">{listing.title}</h2>
                 <p className="text-gray-500">{listing.type}</p>
