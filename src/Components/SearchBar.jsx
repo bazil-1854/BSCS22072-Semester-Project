@@ -11,7 +11,7 @@ const SearchBar = () => {
     const [scrollY, setScrollY] = useState(0);
  
     const style = useSpring({
-        transform: `translateY(${-(Math.min(scrollY / 2, 90))}px) scale(${Math.max(1 - scrollY / 50, 0)})`,
+        transform: `translateY(${-(Math.min(scrollY / 2, 30))}px) scale(${Math.max(1 - scrollY / 50, 0)})`,
         opacity: Math.max(1 - scrollY / 170, 0),
         height: scrollY > 60 ? 0 : 'auto',
     });
