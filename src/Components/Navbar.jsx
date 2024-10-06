@@ -104,8 +104,9 @@ const Navbar = ({ setCategory }) => {
                         </div>
                     </div>
                 )}
-            </div>
+           
             <SearchBar />
+            </div>
             <HorizontalScrollList setCategory={setCategory} />
         </header>
     );

@@ -37,21 +37,21 @@ const SearchBar = () => {
     }, []);
 
     return (
-        <animated.div style={style} className='w-screen flex'>
-            <div className="xl:scale-[1] lg:scale-[0.9] hidden lg:flex items-center bg-white border-[2px] border-gray-200 rounded-[45px] shadow-lg mx-auto">
-                <div className="flex pl-[35px] hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
-                    <label className="text-[12px] font-[700] text-gray-600 mb-1">Where</label>
+        <animated.div style={style} className='mb-[15px] xl:mt-[-8px] flex'>
+            <div className="xl:scale-[1] lg:scale-[0.9] hidden lg:flex items-center bg-white border-[2px] border-gray-200 rounded-[45px] shadow-md mx-auto">
+                <div className="flex pl-[35px] hover:bg-gray-100 px-[15px] rounded-[45px] py-[18px] flex-col">
+                    <label className="text-[12px] font-[700] mb-[-2px] text-gray-600">Where</label>
                     <input
                         type="text"
-                        placeholder="Where are you going?"
+                        placeholder="Search Destinations"
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
-                        className="outline-none focus:pl-[8px] rounded-md focus:ring-2 focus:ring-red-500"
+                        className="outline-none bg-none focus:pl-[8px]"
                     />
                 </div>
 
                 <div className="flex hover:bg-gray-100 px-[35px] rounded-[45px] py-[10px] flex-col">
-                    <label className="text-sm font-medium text-gray-600 mb-1">Check-In</label>
+                    <label className="text-[12px] font-[700] mb-[-2px]  text-gray-600">Check-In</label>
                     <input
                         type="date"
                         value={checkIn}
@@ -61,7 +61,7 @@ const SearchBar = () => {
                 </div>
 
                 <div className="flex hover:bg-gray-100 px-[35px] rounded-[45px] py-[10px]  flex-col">
-                    <label className="text-[12px] font-[700] text-gray-600 mb-1">Check-Out</label>
+                    <label className="text-[12px] font-[700] mb-[-2px] text-gray-600">Check-Out</label>
                     <input
                         type="date"
                         value={checkOut}
@@ -71,7 +71,7 @@ const SearchBar = () => {
                 </div>
 
                 <div className="flex hover:bg-gray-100 px-[35px] rounded-[45px] py-[10px] flex-col">
-                    <label className="text-sm font-medium text-gray-600 mb-1">Guests</label>
+                    <label className="text-[12px] font-[700] mb-[-2px] text-gray-600">Guests</label>
                     <select
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
