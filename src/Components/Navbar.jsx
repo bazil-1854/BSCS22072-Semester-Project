@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { IoMdGlobe } from 'react-icons/io';
+import { AiOutlineSearch } from 'react-icons/ai'; 
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import SearchBar from './SearchBar';
 import HorizontalScrollList from './HorizontalScrollList';
+import airbnb from "../logo.svg";
+import { LuGlobe } from 'react-icons/lu';
 
 const Navbar = ({ setCategory }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -32,11 +33,12 @@ const Navbar = ({ setCategory }) => {
 
     return (
         <header className="bg-white fixed w-full top-0 z-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
+            <div className="border-b-[3px] border-gray-100 mx-auto px-4 sm:px-6 lg:px-[75px]">
                 <div className="flex justify-between items-center py-4">
-                    <div className="flex-shrink-0">
-                        <NavLink to="/" className="text-xl font-bold text-red-500">
-                            Airbnb
+                    <div className="flex items-center">
+                        <img src={airbnb} alt="" className='w-[32px] mr-[5px] h-[32px]'/>
+                        <NavLink to="/" className="text-[24px] font-[780] text-red-500">
+                            airbnb
                         </NavLink>
                     </div>
 
@@ -62,7 +64,7 @@ const Navbar = ({ setCategory }) => {
                     <div className="flex items-center space-x-4">
                         <span className='text-gray-700 text-md'>Airbnb Your Home</span>
                         <button className="hidden md:inline-flex items-center text-gray-600 space-x-2 hover:text-black">
-                            <IoMdGlobe className="text-xl" />
+                            <LuGlobe className="text-xl" />
                         </button>
                         <div onClick={toggleMenu} className="flex items-center space-x-2 border rounded-full px-3 py-2 hover:shadow-lg transition-shadow">
                             <div className='sm:block hidden'><GiHamburgerMenu className="text-xl text-gray-500" /></div>

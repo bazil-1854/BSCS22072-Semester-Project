@@ -5,25 +5,20 @@ const Footer = () => {
     return (
         <footer className="bg-gray-100 py-10">
             <div className="container mx-auto px-4">
-                <div className="flex flex-wrap justify-between mb-6">
+                <div className="flex flex-wrap justify-evenly mb-6">
+                
                     <div className="flex-1">
                         <h5 className="text-gray-700 font-semibold mb-2">Airbnb</h5>
                         <ul>
                             <li><a href="#!" className="text-gray-600 hover:text-gray-800">About Us</a></li>
-                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Careers</a></li>
-                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Privacy</a></li>
-                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Terms</a></li>
-                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Help</a></li>
-                        </ul>
-                    </div>
-
-                    <div className="flex-1">
-                        <h5 className="text-gray-700 font-semibold mb-2">Hosting</h5>
-                        <ul>
                             <li><a href="#!" className="text-gray-600 hover:text-gray-800">Become a Host</a></li>
                             <li><a href="#!" className="text-gray-600 hover:text-gray-800">Host your home</a></li>
                             <li><a href="#!" className="text-gray-600 hover:text-gray-800">Host an Online Experience</a></li>
                             <li><a href="#!" className="text-gray-600 hover:text-gray-800">Resource Center</a></li>
+                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Careers</a></li>
+                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Privacy</a></li>
+                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Terms</a></li>
+                            <li><a href="#!" className="text-gray-600 hover:text-gray-800">Help</a></li>
                         </ul>
                     </div>
 
