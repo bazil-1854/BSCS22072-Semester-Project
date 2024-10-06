@@ -27,10 +27,10 @@ const HorizontalScrollList = ({ setCategory }) => {
                 <button
                     key={index}
                     onClick={() => setCategory(category.category)}
-                    className="flex-shrink-0 bg-white py-2 px-4 flex w-[80px] flex-col items-center space-x-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-200"
+                    className="bg-white py-2 rounded-xl flex w-[120px] flex-col justify-center items-center space-x-2 text-sm font-medium text-gray-700 hover:bg-gray-100 transition duration-200"
                 >
                     {category.icon}
-                    <span className="text-center">{category.name}</span>
+                    <p className="">{category.name}</p>
                 </button>
             ))}
         </div>
