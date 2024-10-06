@@ -50,32 +50,32 @@ const SearchBar = () => {
                     />
                 </div>
 
-                <div className="flex hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
+                <div className="flex hover:bg-gray-100 px-[35px] rounded-[45px] py-[10px] flex-col">
                     <label className="text-sm font-medium text-gray-600 mb-1">Check-In</label>
                     <input
                         type="date"
                         value={checkIn}
                         onChange={(e) => setCheckIn(e.target.value)}
-                        className="outline-none px-4 border rounded-md focus:ring-2 focus:ring-red-500"
+                        className="outline-none focus:ring-2 focus:ring-red-500"
                     />
                 </div>
 
-                <div className="flex hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px]  flex-col">
+                <div className="flex hover:bg-gray-100 px-[35px] rounded-[45px] py-[10px]  flex-col">
                     <label className="text-[12px] font-[700] text-gray-600 mb-1">Check-Out</label>
                     <input
                         type="date"
                         value={checkOut}
                         onChange={(e) => setCheckOut(e.target.value)}
-                        className="outline-none px-4 border rounded-md focus:ring-2 focus:ring-red-500"
+                        className=" outline-none focus:ring-2 focus:ring-red-500"
                     />
                 </div>
 
-                <div className="flex hover:bg-gray-100 px-[15px] rounded-[45px] py-[10px] flex-col">
+                <div className="flex hover:bg-gray-100 px-[35px] rounded-[45px] py-[10px] flex-col">
                     <label className="text-sm font-medium text-gray-600 mb-1">Guests</label>
                     <select
                         value={guests}
                         onChange={(e) => setGuests(e.target.value)}
-                        className="outline-none px-4 border rounded-md focus:ring-2 focus:ring-red-500"
+                        className="outline-none focus:ring-2 focus:ring-red-500"
                     >
                         {[1, 2, 3, 4, 5].map((num) => (
                             <option key={num} value={num}>

@@ -15,7 +15,7 @@ const listingsData = [
         type: 'Private Room',
         guests: 2,
         price: 90,
-        rating: 4.7,
+        rating: 2.7,
         image: 'https://via.placeholder.com/400x300?text=Mountain+Cabin',
         category: 'Cabins',
     },
