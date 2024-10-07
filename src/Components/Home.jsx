@@ -1,11 +1,12 @@
+import React from 'react'; 
 import ListingsGrid from './Cards/ListingsGrid ';
 
-const Home = ({category}) => { 
-    return (
-        <div className='mt-[280px]'> 
-            <ListingsGrid category={category} />
-        </div>
-    )
-}
+const Home = ({ listings }) => {
+  return (
+    <div className='mt-[280px]'> 
+      <ListingsGrid listings={listings} />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
