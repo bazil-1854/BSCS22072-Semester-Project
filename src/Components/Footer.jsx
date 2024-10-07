@@ -46,10 +46,10 @@ const Footer = () => {
             <div className="flex mt-[15px] flex-wrap justify-between items-center">
                 <div className="text-gray-600 flex items-center">
                     <p className='mr-[8px]'>© 2024 Airbnb, Inc.</p>
-                    <p className='flex items-center'><p className='w-[4px] mt-[3px] mr-[4px] h-[4px] bg-gray-400 rounded-full'></p>Term</p>
-                    <p className='flex items-center'><p className='w-[4px] mt-[3px] mx-[10px] h-[4px] bg-gray-400 rounded-full'></p>Sitemap</p>
-                    <p className='flex items-center'><p className='w-[4px] mt-[3px] mx-[10px] h-[4px] bg-gray-400 rounded-full'></p>Privacy</p>
-                    <p className='flex items-center'><p className='w-[4px] mt-[3px] mx-[10px] h-[4px] bg-gray-400 rounded-full'></p>Your Privacy Choices</p>
+                    <p className='flex items-center'><span className='w-[4px] mt-[3px] mr-[4px] h-[4px] bg-gray-400 rounded-full'></span>Term</p>
+                    <p className='flex items-center'><span className='w-[4px] mt-[3px] mx-[10px] h-[4px] bg-gray-400 rounded-full'></span>Sitemap</p>
+                    <p className='flex items-center'><span className='w-[4px] mt-[3px] mx-[10px] h-[4px] bg-gray-400 rounded-full'></span>Privacy</p>
+                    <p className='flex items-center'><span className='w-[4px] mt-[3px] mx-[10px] h-[4px] bg-gray-400 rounded-full'></span>Your Privacy Choices</p>
                 </div>
                 <div className="flex space-x-4">
                     <a href="#!" className="bg-gray-600 text-white hover:text-gray-800 p-[3px] rounded-md"><FaFacebookF /></a>
