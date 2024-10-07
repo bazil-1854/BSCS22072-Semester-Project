@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
+import { FaBars, FaHeart, FaSearch, FaSlidersH, FaTimes, FaUser, FaUserCircle } from 'react-icons/fa';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -111,8 +111,61 @@ const Navbar = ({ setCategory }) => {
                 <HorizontalScrollList setCategory={setCategory} />
             </nav>
             <nav className='md:hidden block'>
+                <div className="flex items-center pt-[15px] px-[18px] w-screen">
+                    <div className='border-[2px] w-[85%] border-gray-300 rounded-[25px] flex items-center py-[5px] px-3'>
+                        <FaSearch className="text-gray-700 mr-5" size={25} />
+                        <div className="flex-1 text-[14px] text-gray-500">
+                            <div className="font-medium">Where to?</div>
+                            <div className="text-[12px] text-gray-400">Anywhere · Any week · Add guests</div>
+                        </div>
+                    </div>
+                    <div className='w-[15%] flex justify-center'>
+                        <button className=" border-[2px] p-2 border-gray-500 rounded-full bg-gray-100">
+                            <FaSlidersH onClick={toggleMenu} className="text-gray-500" size={20} />
+                        </button>
+                    </div>
 
-            <HorizontalScrollList setCategory={setCategory} />
+                </div>
+                {isOpen && (
+                    <div className="sm:hidden">
+                        <div className="flex flex-col bg-white rounded-lg shadow-md mt-2 p-4">
+                            <NavLink to="/" className="block py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                Sign up
+                            </NavLink>
+                            <NavLink to="/" className="block py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                Log in
+                            </NavLink>
+                            <div className="w-full bg-gray-200 h-[2px] my-2"></div>
+                            <NavLink to="/" className="block py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                Gift Cards
+                            </NavLink>
+                            <NavLink to="/" className="block py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                Airbnb Your Home
+                            </NavLink>
+                            <NavLink to="/" className="block py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                Host an Experience
+                            </NavLink>
+                            <NavLink to="/" className="block py-2 text-gray-700 hover:bg-gray-100 rounded-lg">
+                                Help Center
+                            </NavLink>
+                        </div>
+                    </div>
+                )}
+                <HorizontalScrollList setCategory={setCategory} />
+                <div className="fixed bottom-0 left-0 w-full bg-white shadow-lg flex px-[55px] justify-around py-2"> 
+                    <div className="flex flex-col items-center">
+                        <FaSearch className="text-red-500 mb-[6px]" size={22} />
+                        <span className="text-xs text-gray-600">Explore</span>
+                    </div> 
+                    <div className="flex flex-col items-center">
+                        <FaHeart className="text-gray-400 mb-[6px]" size={22} />
+                        <span className="text-xs text-gray-600">Wishlist</span>
+                    </div> 
+                    <div className="flex flex-col items-center">
+                        <FaUser className="text-gray-400 mb-[6px]" size={22} />
+                        <span className="text-xs text-gray-600">Login</span>
+                    </div>
+                </div>
             </nav>
         </header>
     );

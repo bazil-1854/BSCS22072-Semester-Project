@@ -18,8 +18,7 @@ const categories = [
     { name: 'Camping', category: 'Camping', icon: <FaFire className='text-[25px] mb-[5px]' /> },
     { name: 'Skiing', category: 'Skiing', icon: <MdOutlineSnowboarding className='text-[25px] mb-[5px]' /> },
     { name: 'Hiking', category: 'Hiking', icon: <MdOutlineHiking className='text-[25px] mb-[5px]' /> },
-    { name: 'Flights', category: 'Flights', icon: <MdOutlineFlight className='text-[25px] mb-[5px]' /> },
-    // Additional Categories
+    { name: 'Flights', category: 'Flights', icon: <MdOutlineFlight className='text-[25px] mb-[5px]' /> }, 
     { name: 'Dining', category: 'Dining', icon: <MdOutlineLocalDining className='text-[25px] mb-[5px]' /> },
     { name: 'Business', category: 'Business', icon: <MdOutlineBusinessCenter className='text-[25px] mb-[5px]' /> },
     { name: 'Fitness', category: 'Fitness', icon: <MdOutlineFitnessCenter className='text-[25px] mb-[5px]' /> },
